@@ -13,12 +13,11 @@ Debugging is a crucial aspect of software development, especially in complex bui
 [Watch the Video Tutorial](https://drive.google.com/file/d/13Su6BMfcX6kLUgUBNrtmoraawsbWD54Z/view?usp=sharing) 
 This video provides a step-by-step walkthrough of various debugging techniques in Yocto.
 
-## Slides from Bootlin Tutorial
-The attached slides summarize key concepts and methodologies from the Bootlin tutorial. They serve as a quick reference guide to complement the video content.
+
 
 ## Debugging Techniques
 
-Sure! Here’s a rewritten version with a brief introduction:
+
 
 ---
 
@@ -41,7 +40,7 @@ Benefits of Using Logs
 - Provide insights into build processes.
 - Improve recipe reliability by allowing developers to debug and optimize.
 
-Sure! Here’s how you can add the steps for accessing log files to your README:
+
 
 ---
 
@@ -70,12 +69,14 @@ To view the log files generated during the build process, follow these steps:
 
 7. **List Available Log Files**:
    List the contents of the `temp` directory to find relevant log files
+
+### Important Log Files
+- **`log.do_compile`**: Contains logs related to the compilation process of the recipe.
+- **`run.do_compile`**: Shows the script that was executed during the compilation.
    
 8. **View the Log Files**:
    Use `cat` or `less` to read the contents of the desired log files, such as `log.do_compile`:
-   ```bash
-   cat log.do_compile
-   ```
+
 
 ## Example of Accessing Run/Log Files in My Bash
 
@@ -83,10 +84,6 @@ Here’s an example of how to access the run and log files using my own terminal
 
 ![Screenshot from 2024-10-29 00-01-41](https://github.com/user-attachments/assets/f034228f-b22c-400c-a261-fafcfadd603a)
 
-
-### Important Log Files
-- **`log.do_compile`**: Contains logs related to the compilation process of the recipe.
-- **`run.do_compile`**: Shows the script that was executed during the compilation.
 
 ## Understanding the Log and Run Files
 

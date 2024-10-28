@@ -15,7 +15,8 @@ This video provides a step-by-step walkthrough of various debugging techniques i
 
 
 
-## Debugging Techniques
+# Debugging Techniques
+
 
 ## Viewing Logs from Failed Tasks
 

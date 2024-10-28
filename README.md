@@ -17,20 +17,14 @@ This video provides a step-by-step walkthrough of various debugging techniques i
 
 ## Debugging Techniques
 
+## Viewing Logs from Failed Tasks
 
+You can locate the log for a specific task in the file `${WORKDIR}/temp/log.do_<taskname>`. For instance, if you are examining the `do_compile` task for the QEMU minimal image targeting the x86 machine (referred to as `qemux86`), the log file would typically be found at `tmp/work/qemux86-poky-linux/core-image-minimal/1.0-r0/temp/log.do_compile`. 
 
----
+To view the commands that BitBake executed to generate this log, refer to the corresponding `run.do_<taskname>` file in the same directory.
 
-## **Viewing Logs from Failed Tasks**
+Both `log.do_<taskname>` and `run.do_<taskname>` are symbolic links to `log.do_<taskname>.<pid>` and `log.run_<taskname>.<pid>`, where `<pid>` represents the process ID of the task during its execution. These symlinks always direct you to the files from the most recent run of the task.
 
-- When a task fails in Yocto, logs are essential for diagnosing the issue.
-- You can find the log for a specific task in the file `${[WORKDIR](https://docs.yoctoproject.org/ref-manual/variables.html#term-WORKDIR)}/temp/log.do_`taskname`. For instance, the log for the [do_compile](https://docs.yoctoproject.org/ref-manual/tasks.html#ref-tasks-compile) task of the QEMU minimal image for the x86 machine (`qemux86`) might be located at `tmp/work/qemux86-poky-linux/core-image-minimal/1.0-r0/temp/log.do_compile`.
-
-- To see the commands executed by [BitBake](https://docs.yoctoproject.org/ref-manual/terms.html#term-BitBake) that generated the log, refer to the corresponding `run.do_`taskname file in the same directory.
-
-- Both `log.do_`taskname and `run.do_`taskname are symbolic links pointing to `log.do_`taskname`.`pid` and `log.run_`taskname`.`pid`, where `pid` is the process ID of the task during execution. These symlinks always refer to the most recent run, making it easier to access relevant logs.
-
---- 
 
 ![Screenshot from 2024-10-28 23-39-11](https://github.com/user-attachments/assets/84f2ce9d-da83-4772-8d3f-4b460aed8bd7)
 
@@ -173,3 +167,6 @@ By effectively debugging variable assignments, you can enhance the reliability a
 
 ## Reference
 For more information on debugging in Yocto, please refer to the [Yocto Project Debugging Manual](https://docs.yoctoproject.org/dev-manual/debugging.html).
+
+For any questions or feedback, feel free to reach out via email: [baselinux2024@gmail.com](mailto:baselinux2024@gmail.com)
+
